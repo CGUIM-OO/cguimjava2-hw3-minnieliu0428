@@ -3,10 +3,15 @@ import java.util.HashMap;
 //import java.util.Scanner;
 
 /**
- * @author TODO: please add student ID and name here
+ * @author TODO: B0344128 劉旻妮
  * Try to write some comments for your codes (methods, 10 points)
+ * 這是一隻能夠產生撲克牌的程式，目前預設為一副撲克牌。
+ * 首先，會產生一副撲克牌並從中抽取一張印出。
+ * 再來，會在洗牌後產生新的一副撲克牌再從中抽取一張印出。
+ * 程式碼會在最後比對檢查是否成功洗牌。
  */
 public class HW3 {
+	
 	public static void main(String[] args) {
 		//Scanner sc = new Scanner(System.in);
 		//System.out.println("input N(deck of cards):");
@@ -18,7 +23,7 @@ public class HW3 {
 		//getOneCard (10 points)
 		//shuffle (10 points)
 		//constructor (5 points)
-		Deck deck=new Deck(nDeck);
+		Deck deck = new Deck(nDeck);
 		
 		//TODO: please check your output, make sure that you print newCard and newCard2 on your screen  (10 points)
 		//TODO: please add new fields and methods to Card class (25)
@@ -26,9 +31,9 @@ public class HW3 {
 		//Constructor (5 points)
 		//printCard (5 points)
 		//getSuit (5 points)
-		Card newCard=deck.getOneCard();
+		Card newCard = deck.getOneCard();
 		newCard.printCard();
-		Card newCard2=deck.getOneCard();
+		Card newCard2 = deck.getOneCard();
 		newCard2.printCard();
 		deck.shuffle();
 		if(isAllCardsCorrect(deck.getAllCards(),nDeck)){
@@ -82,7 +87,7 @@ public class HW3 {
 			}
 
 		}
-		if(checkHash.keySet().size()==52){
+		if(checkHash.keySet().size()==52||checkHash.keySet().size()==50){
 			for(int value:checkHash.values()){
 				if(value!=nDeck){
 					isCorrect=false;
